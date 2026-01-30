@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+
+    <!-- font awesome cdn link  to apply the mini logos lol -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="home.html"  class="logo"> ArborForm </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">about us > </a>
+                <ul> 
+                    <li><a href="about.html"> our product </a></li>
+                    <li><a href="meet-the-team.html">Meet the team</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Education > </a>
+                <ul>
+                    <li><a href="course-1.html">The Design Process</a></li>
+                    <li><a href="course-2.html">Elements in construction</a></li>
+                    <li><a href="course-3.html">Videos</a></li>
+                </ul>
+
+            </li>
+            <li><a href="#">Our Apps > </a>
+                <ul>
+                    <li><a href="Augemented-reality.html">ArborReality: augmented Reality</a></li>
+                    <li><a href="ArborCO2.html">ArborConstruction: the CO2 calculator</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">blogs</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navbar = document.querySelector('.header .navbar');
+
+    menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    });
+    </script>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home">
+
+    <div class="image">
+        <img src="images/c535e8b4-d8f4-47ab-92e6-f6dd6f44f7de.JPG" alt="">
+        <div class="overlay"></div>
+    </div>
+
+    <div class="content">
+        <h3 id="typing-text" class="typing"></h3>
+        <p> </p>
+        <a href="about.html" class="btn">Find out more</a>
+    </div>
+    
+    <script>
+        const text = "Loading\n- - - - - - - -\nArborReality\nincoming";
+        const typingElement = document.getElementById("typing-text");
+        let index = 0;
+        let repeatCount = 0
+        const maxRepeats = 3;
+
+        function type() {
+        if (index < text.length) {
+            if (text[index] === "\n") {
+                typingElement.innerHTML += "<br>";
+            } else {
+                typingElement.innerHTML += text[index];
+            }
+            index++;
+            setTimeout(type, 300); // typing speed in ms
+        } else {
+            repeatCount++;
+            if (repeatCount < maxRepeats) {
+                setTimeout(
+                    () => {
+                    typingElement.innerHTML = "";
+                    index = 0;
+                    type();
+                }, 1000); // wait before restarting
+            }
+        }
+    }
+    
+    type();
+    </script>
+
+
+</section>
+
+<!-- home section ends -->
+
+</body>
+</html>
