@@ -91,38 +91,16 @@
 
 <!-- footer section starts  -->
 
-<section class="footer">
-
-    <div class="box-container">
-
-        <div class="box">
-            <h3>explore</h3>
-            <a href="home.html"> <i class="fas fa-arrow-right"></i> home </a>
-            <a href="about.html"> <i class="fas fa-arrow-right"></i> about </a>
-            <a href="blog.html"> <i class="fas fa-arrow-right"></i> blog </a>
-            <a href="contact.html"> <i class="fas fa-arrow-right"></i> contact </a>
-        </div>
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> my account </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> feedback </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> help center </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> certificates </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> newsletter </a>
-        </div>
-
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="https://www.instagram.com/arborform.project/"> <i class="fab fa-instagram"></i> instagram </a>
-            <a href="#"> <i class="fas fa-envelope"></i></i> email </a>
-        </div>
-
-    </div>
-
-    <div class="credit"> created by <span>Group 14</span> | Copyright and Trademarked! </div>
-
-</section>
+<body>
+    <div id="footer-placeholder"></div>
+        <script>
+            fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+</body>
 
 <!-- footer section ends -->
 
