@@ -26,10 +26,10 @@ fetch("header.html")
     const menuBtn = document.getElementById('menu-btn');
     const navbar = document.querySelector('.header .navbar');
 
-    if(menuBtn){
+    if (menuBtn && navbar) {
         menuBtn.addEventListener('click', () => {
             navbar.classList.toggle('active');
-        };
+        });
     }
 });
 </script>
@@ -38,7 +38,6 @@ fetch("header.html")
 <section class="heading">
     <h3>About ArborForm</h3>
     <p>Explore our pages to find out more about our product, we are excited to share our design process with you</p>
-    
 </section>
 
 <section>
