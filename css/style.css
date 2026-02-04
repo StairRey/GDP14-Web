@@ -328,11 +328,7 @@ section {
 }
 
 .course-1 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
-  gap: 1.5rem;
+  background-color: #b0b0b0;
 }
 
 .course-1 .bigbox {
@@ -340,11 +336,17 @@ section {
   border-radius: 4rem;
   text-align: center;
   padding: 3rem 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 1.5rem;
 }
 
 .course-1 .bigbox h1 {
   fon-size: 5rem;
-  text-align: Center;
+  text-align: top;
+  
   color: #224bcf;
 }
 
