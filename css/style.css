@@ -77,7 +77,6 @@ section {
 }
 
 .header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -97,9 +96,14 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-          
+
   padding: 0 9%;
   background: #0ec651;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body {
+  padding-top: 8rem; /* adjust if needed */
 }
 
 .header .logo {
