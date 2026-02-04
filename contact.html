@@ -16,16 +16,22 @@
 <body>
     
 <!-- header section starts  -->
-<body>
-    <div id="header-placeholder"></div>
-    <script>
-    fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
-    });
-    </script>
-</body>
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header-placeholder").innerHTML = data;
+
+    const menuBtn = document.getElementById('menu-btn');
+    const navbar = document.querySelector('.header .navbar');
+
+    if (menuBtn && navbar) {
+        menuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    }
+});
+</script>
 <!-- header section ends -->
  
 <section class="heading">
@@ -45,7 +51,6 @@
 </section>
 
 <section class="contact">
-
     <div class="icons-container">
 
         <div class="icons">
@@ -71,11 +76,8 @@
                 <h3>our instagram</h3>
                 <p>@arborform.project</p>
             </div>
-
     </div>
-
     <div class="row">
-
         <form action="">
             <h3>get in touch</h3>
             <input type="text" placeholder="your name" class="box">
@@ -93,9 +95,7 @@
             style="border:0;" allowfullscreen="" loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-
     </div>
-
 </section>
 
 
@@ -112,16 +112,16 @@
 
 <!-- footer section starts  -->
 
-<body>
-    <div id="footer-placeholder"></div>
-        <script>
-            fetch("footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("footer-placeholder").innerHTML = data;
-            });
-        </script>
-</body>
+
+<div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+
 
 <!-- footer section ends -->
 
