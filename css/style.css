@@ -38,8 +38,8 @@ section {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem 3rem;
-  background: #e9edfb;
-  color: #224bcf;
+  background: #b0b0b0;
+  color: #b5b20e;
   cursor: pointer;
   border-radius: .5rem;
   font-size: 1.7rem;
@@ -47,10 +47,8 @@ section {
 
 .btn:hover {
   color: #fff;
-  background: #224bcf;
+  background: #c09105;
 }
-
-
 
 .heading {
   background: #0ca143;
@@ -109,8 +107,6 @@ section {
 }
 
 .header .navbar {
-  position: fixed;
-  top: 0;
   z-index: 1001;
 }
 
@@ -311,7 +307,6 @@ section {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 30rem;
           flex: 1 1 30rem;
-  
 }
 
 .about .content h2 {
