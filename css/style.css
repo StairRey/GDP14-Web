@@ -619,6 +619,14 @@ section {
   opacity: 0;
 }
 
+.members .box .image .share p {
+  font-size: 2rem;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  line-height: 2.5;
+  color: #666;
+}
+
 .members .box .image .share a:hover {
   color: #fa9a1d;
 }
