@@ -16,18 +16,23 @@
 <body>
     
 <!-- header section starts  -->
-<body>
 <div id="header-placeholder"></div>
-
 <script>
 fetch("header.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("header-placeholder").innerHTML = data;
-  });
-</script>
 
-</body>
+    const menuBtn = document.getElementById('menu-btn');
+    const navbar = document.querySelector('.header .navbar');
+
+    if(menuBtn){
+        menuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        };
+    }
+});
+</script>
 <!-- header section ends -->
 
 <section class="heading">
@@ -162,16 +167,16 @@ fetch("header.html")
 
 <!-- footer section starts  -->
 
-<body>
-    <div id="footer-placeholder"></div>
-        <script>
-            fetch("footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("footer-placeholder").innerHTML = data;
-            });
-        </script>
-</body>
+
+<div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+
 
 <!-- footer section ends -->
 
