@@ -103,7 +103,7 @@ section {
 }
 
 body {
-  padding-top: 8rem; /* adjust if needed */
+  padding-top: 0rem; /* adjust if needed */
 }
 
 .header .logo {
