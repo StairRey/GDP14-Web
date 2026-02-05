@@ -404,11 +404,11 @@ body {
 }
 
 .course-2 .box .image img {
-  width: 80%;
+  height: 70%;
 }
 
 .course-2 .box .image img:hover {
-  transform: scale(1.10);
+  transform: scale(1.4);
   transition: transform 0.3s ease;
   border: #0ca143 solid 0.2rem;
 }
