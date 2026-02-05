@@ -648,6 +648,11 @@ body {
   opacity: 0;
 }
 
+.members .box .image .share .icons {
+  position: absolute;
+  bottom: 2rem;
+}
+
 .members .box .image .share p {
   font-size: 2rem;
   padding: 1rem 0;
