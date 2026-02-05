@@ -595,8 +595,9 @@ body {
 
 .members .box:hover .image .share p {
   text-align: center;
+  text-align: top;
   font-size: 1.5rem;
-  color: #66fca2;
+  color: #d2f4df;
 }
 
 .members .box:hover .image .share a {
