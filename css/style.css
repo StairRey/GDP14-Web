@@ -404,11 +404,11 @@ body {
 }
 
 .course-2 .box .image img {
-  height: 70%;
+  width: 60%;
 }
 
 .course-2 .box .image img:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   transition: transform 0.3s ease;
   border: #0ca143 solid 0.2rem;
 }
@@ -461,6 +461,36 @@ body {
 .course-2 .box .content .icons a i {
   padding-right: .5rem;
   color: #fa1d86;
+}
+
+.course2content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 1.5rem;
+}
+
+.course2content .box {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #f5f5f5;
+}
+
+.course2content .box .image {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.course2content .box .image img {
+  border-radius: 1rem;
+  width: 60%;
+}
+
+.course2content .box .image img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  border: #0ca143 solid 0.2rem;
 }
 
 .course-3 {
