@@ -17,22 +17,6 @@
     
 <!-- header section starts  -->
 <div id="header-placeholder"></div>
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-
-    const menuBtn = document.getElementById('menu-btn');
-    const navbar = document.querySelector('.header .navbar');
-
-    if (menuBtn && navbar) {
-        menuBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    }
-});
-</script>
 <!-- header section ends -->
  
 <section class="heading">
@@ -128,6 +112,6 @@ fetch("header.html")
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
+<script src="js/header.js"></script>
 </body>
 </html>

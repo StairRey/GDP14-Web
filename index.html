@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>ArborForm</title>
 
     <!-- font awesome cdn link  to apply the mini logos lol -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -17,22 +17,6 @@
     
 <!-- header section starts  -->
 <div id="header-placeholder"></div>
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-
-    const menuBtn = document.getElementById('menu-btn');
-    const navbar = document.querySelector('.header .navbar');
-
-    if (menuBtn && navbar) {
-        menuBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    }
-});
-</script>
 <!-- header section ends -->
 
 <!-- home section starts  -->
@@ -70,6 +54,8 @@ fetch("header.html")
 </section>
 
 <!-- home section ends -->
+
+<script src="js/header.js"></script>
 
 </body>
 </html>

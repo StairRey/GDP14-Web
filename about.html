@@ -17,34 +17,40 @@
     
 <!-- header section starts  -->
 <div id="header-placeholder"></div>
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-
-    const menuBtn = document.getElementById('menu-btn');
-    const navbar = document.querySelector('.header .navbar');
-
-    if (menuBtn && navbar) {
-        menuBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    }
-});
-</script>
 <!-- header section ends -->
 
 <section class="heading">
-    <h3>About ArborForm</h3>
+    <h3>About us</h3>
     <p>Explore our pages to find out more about our product, we are excited to share our design process with you</p>
+    <div class="breadcrumb">
+        <a href="home.html"> home </a> 
+        <span> / about us </span>
+    </div>
 </section>
 
-<section>
-    <a href="home.html"> home </a> <span> / about us </span>
-</section>
 
 <!-- about section starts  -->
+
+<section class="about">
+    <div class="content">
+        <h3>
+            Who are we?
+        </h3>
+    </div>
+</section>
+
+<section class="about">
+
+    <div class="content">
+
+        <p> 
+            We are students from the University of Southampton.
+            Our goal is to create a structure inspired by the ASCI structural sculpture
+            to encompass all engineering disciplines on Boldrewood Campus
+
+        </p>
+    </div>
+</section>
 
 <section class="about">
 
@@ -53,13 +59,23 @@ fetch("header.html")
     </div>
 
     <div class="content">
+
         <h3>Our Product</h3>
         
         <p> 
             ArborForm is the harmony between nature and 
             construction, a visionary project that redefines
             the way we interact with our built environment.
+        </p>
+        <p> 
+            At its core, ArborForm is a living architectural marvel,
+            seamlessly integrating lush greenery with innovative design.
+            This project is a testament to our commitment to sustainability,
+            as it not only enhances the aesthetic appeal of urban spaces but 
+            also promotes environmental well-being.
+        </p>
 
+        <p> 
             At its core, ArborForm is a living architectural marvel,
             seamlessly integrating lush greenery with innovative design.
             This project is a testament to our commitment to sustainability,
@@ -67,15 +83,13 @@ fetch("header.html")
             also promotes environmental well-being.
 
         </p>
-        <h2>MVP, 10.01.2026</h2>
-        <p>UoS, all rights reserved</p>
+        <h2>
+            MVP, 10.01.2026
+        </h2>
+        <p>
+            UoS, all rights reserved
+        </p>
         
-    </div>
-</section>
-
-<section class="about">
-    <div class="imagefull">
-        <img src="images/shroom.png" alt="">
     </div>
 </section>
 
@@ -84,7 +98,23 @@ fetch("header.html")
     <div class="content">
         <h3>CAD model</h3>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget eleifend mauris, sollicitudin luctus magna. Fusce ornare odio eu turpis semper dapibus. Cras placerat vulputate leo, sed congue tortor elementum non. Quisque vehicula velit nec ex posuere tristique. Sed dictum tortor vel justo hendrerit, quis finibus orci dapibus. Mauris fermentum augue vel nulla accumsan, vel vulputate augue mollis. Vivamus consequat fringilla lacus, vel ultrices ex iaculis non. Nunc quis sapien a dolor placerat placerat eu vitae felis. Duis in accumsan lectus. Maecenas dapibus sed tortor sit amet fermentum.</p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam eget eleifend mauris, sollicitudin luctus magna. 
+            Fusce ornare odio eu turpis semper dapibus. Cras placerat
+            vulputate leo, sed congue tortor elementum non. Quisque 
+            vehicula velit nec ex posuere tristique.
+        </p>
+
+        <p>
+            Sed dictum tortor vel justo hendrerit, quis finibus orci dapibus. Mauris 
+            fermentum augue vel nulla accumsan, vel vulputate augue 
+            mollis. Vivamus consequat fringilla lacus, vel ultrices 
+            ex iaculis non. Nunc quis sapien a dolor placerat placerat 
+            eu vitae felis. Duis in accumsan lectus. Maecenas dapibus 
+            sed tortor sit amet fermentum.
+        </p>
+
         <h2>AR, 14.01.2026</h2>
         <p>UoS, all rights reserved</p>
     </div>
@@ -94,17 +124,8 @@ fetch("header.html")
     </div>
 </section>
 
-<!-- <a href="#" class="btn">learn more</a> -->
 
 <!-- about section ends -->
-
-
-
-
-
-
-
-
 
 
 <!-- categories section starts  -->
@@ -187,6 +208,5 @@ fetch("header.html")
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
 </body>
 </html>
