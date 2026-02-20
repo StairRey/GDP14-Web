@@ -9,8 +9,9 @@
   text-decoration: none;
   outline: none;
   border: none;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
+  -webkit-transition: all .6s linear;
+  transition: all .6s linear;
+  color-scheme: dark; /* only dark mode support */
 }
 
 html {
@@ -53,6 +54,7 @@ section {
 .heading {
   background: #0b8739;
   padding: 1rem 1rem;
+  padding-top: 8rem;
 }
 
 .heading h3 {
@@ -81,7 +83,7 @@ section {
 }
 
 body {
-  padding-top: 6rem; /* adjust if needed */
+  padding-top: 0rem; /* adjust if needed */
 }
 
 .header {
@@ -290,23 +292,24 @@ body {
   color: #fff;
   font-size: 5rem;
   line-height: 1.2;
+  text-align: left;
   max-width: 100%;
-  word-break: break-word;
-  display: inline-block;
+  /* word-break: break-word; */
+  /* display: inline-block; */
   white-space: pre-wrap; /* allow wrapping */
 }
 
 .category {
   display: -ms-grid;
-  display: grid;
+  display: inline-flex;
   -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
 }
 
 .category .box {
-  border-radius: 1rem;
-  background: #f5f5f5;
+  border-radius: 0.5rem;
+  background: #03ac0639;
   padding: 4rem 3rem;
   text-align: center;
 }
@@ -318,7 +321,7 @@ body {
 
 .category .box h3 {
   font-size: 1.7rem;
-  color: #302851;
+  color: #ffffff;
 }
 
 .imagefull {
@@ -342,7 +345,7 @@ body {
 }
 
 .about {
-  background-color: black;
+  background-color: rgb(22, 22, 22);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -354,7 +357,6 @@ body {
       flex-wrap: wrap;
   gap: 2rem;
 }
-
 
 .about .image {
   display: flex;
@@ -376,13 +378,13 @@ body {
 }
 
 .about .content h2 {
-  color: #a893ff;
+  color: #ffffff;
   font-weight: bold;
   font-size: 2rem;
 }
 
 .about .content h3 {
-  color: #dad1ff;
+  color: #ffffff;
   padding-bottom: 2rem;
   font-size: 4.5rem;
 }
@@ -390,7 +392,7 @@ body {
 .about .content p {
   font-size: 2rem;
   padding: 1rem 0;
-  color: #a1affb;
+  color: #ffffff;
   line-height: 1.5;
 }
 
@@ -398,46 +400,51 @@ body {
   background-color: #1a1919;
 }
 
-.course-1 .bigbox {
-  background: #66fca2;
+.course-1 .boxx {
   border-radius: 4rem;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
   gap: 1.5rem;
 }
 
-.course-1 .bigbox h1 {
-  font-size: 5rem;
+.course-1 .boxx h1 {
+  font-size: 3rem;
   text-align: top;
-  color: #224bcf;
+  color: #ffffff;
+}
+
+.course-1 .bigbox {
+  border-radius: 1rem;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .course-1 .bigbox .box {
-  background: #92ebff;
-  border-radius: 4rem;
+  background: #38383852;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 2rem;
   text-align: center;
   padding: 5rem 5rem;
 }
 
 .course-1 .bigbox .box img {
   margin-bottom: 1rem;
-  height: 8rem;
+  height: 6rem;
 }
 
 .course-1 .bigbox .box h3 {
   font-size: 2rem;
-  color: #302851;
+  color: #ffffffbe;
   padding: .5rem 0;
 }
 
 .course-1 .bigbox .box p {
-  font-size: 1.4rem;
-  color: #666;
-  line-height: 2.5;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 2;
   padding: 1rem 0;
 }
 

@@ -21,33 +21,17 @@
 
     <!-- header section starts  -->
 <div id="header-placeholder"></div>
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-
-    const menuBtn = document.getElementById('menu-btn');
-    const navbar = document.querySelector('.header .navbar');
-
-    if (menuBtn && navbar) {
-        menuBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    }
-});
-</script>
     <!-- header section ends -->
 
     <section class="heading">
         <h3>Our Team</h3>
         <p>We are a team of passionate engineers and designers working to make a sustainable future through innovative
             construction solutions.</p>
-    </section>
 
-
-    <section class="navsub">
-        <a href="home.html"> home </a> <span> / our members </span>
+        <div class="breadcrumb">
+            <a href="index.html"> home </a> 
+            <span> / Meet the Tean </span>
+        </div>
     </section>
 
     <!-- Supervisor section starts  -->
@@ -208,7 +192,7 @@ fetch("header.html")
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
-
+    <script src="js/header.js"></script>
 </body>
 
 </html>
