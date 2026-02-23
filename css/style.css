@@ -84,6 +84,7 @@ section {
 
 body {
   padding-top: 0rem; /* adjust if needed */
+  overflow: hidden;
 }
 
 .header {
@@ -699,6 +700,59 @@ body {
   color: #ffffff;
 }
 
+/* ArborReality CSSS */
+.arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.arjs-loader div {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    margin: 10px;
+}
+
+/* Debug info overlay */
+.debug-info {
+    position: relative;
+    top: 200px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 200px;
+}
+
+.detection-status {
+    position: fixed;
+    bottom: 20px;
+    left: 10%;
+    transform: translateX(-10%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+.detected {
+    background: rgba(0, 200, 0, 0.8) !important;
+}
 
 .members {
   display: -ms-grid;

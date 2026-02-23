@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>ArborReality</title>
 
     <!-- font awesome cdn link  to apply the mini logos lol -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -12,7 +12,9 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
 
-    
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
 
 </head>
     
@@ -21,56 +23,187 @@
 <!-- header section ends -->
 
 <!-- home section starts  -->
+<body>
 
 <section class="home">
-
-    <div class="image">
-        <img src="images/c535e8b4-d8f4-47ab-92e6-f6dd6f44f7de.JPG" alt="">
-        <div class="overlay"></div>
+    <!-- Loading screen -->
+    <div class="arjs-loader">
+        <div>Loading ArborReality</div>
+        <div style="font-size: 2em;">Point camera at printed marker</div>
     </div>
 
-    <div class="content">
-        <h3 id="typing-text" class="typing"></h3>
-        <p> </p>
-        <a href="about.html" class="btn">Find out more</a>
+    <!-- Debug information -->
+    <div class="debug-info" id="debugInfo">
+        <div>ArborDebug information</div>
+        <div id="markerStatus">Marker: Not detected</div>
+        <div id="cameraInfo">Resolution: Loading...</div>
     </div>
-    
-    <script>
-        const text = "Loading\n- - - - - - - -\nArborReality\nincoming";
-        const typingElement = document.getElementById("typing-text");
-        let index = 0;
-        let repeatCount = 0
-        const maxRepeats = 3;
 
-        function type() {
-        if (index < text.length) {
-            if (text[index] === "\n") {
-                typingElement.innerHTML += "<br>";
-            } else {
-                typingElement.innerHTML += text[index];
-            }
-            index++;
-            setTimeout(type, 300); // typing speed in ms
-        } else {
-            repeatCount++;
-            if (repeatCount < maxRepeats) {
-                setTimeout(
-                    () => {
-                    typingElement.innerHTML = "";
-                    index = 0;
-                    type();
-                }, 1000); // wait before restarting
-            }
-        }
-    }
-    
-    type();
-    </script>
+    <!-- Detection status -->
+    <div class="detection-status" id="detectionStatus">
+        Scanning for markers...
+    </div>
 
-
+    <!-- AR Scene with improved settings -->
+    <a-scene
+        embedded
+        custom-camera
+        arjs="sourceType: webcam; 
+              sourceWidth: 1280; 
+              sourceHeight: 960; 
+              displayWidth: 1280; 
+              displayHeight: 960;
+              debugUIEnabled: false;
+              detectionMode: mono_and_matrix;
+              matrixCodeType: 3x3;
+              trackingMethod: best;"
+        vr-mode-ui="enabled: false"
+        renderer="logarithmicDepthBuffer: true; precision: medium;">
+        
+        <!-- Barcode Marker 0 - Steel -->
+        <a-marker 
+            id="marker0"
+            type="barcode" 
+            value="0"
+            smooth="true"
+            smoothCount="10"
+            smoothTolerance="0.01"
+            smoothThreshold="5">
+            
+            <!-- 3D Content that appears on marker -->
+            <a-box 
+                position="0 0.5 0" 
+                material="color: ##8c0000; opacity: 0.5;" 
+                scale="0.8 0.8 0.8;">
+            </a-box>
+            
+            <!-- Text label -->
+            <a-text 
+                value="hello world" 
+                position="0 1.5 0" 
+                alignment ="center" 
+                color="white"
+                scale="1 1 1">
+            </a-text>
+            
+            <!-- Additional visual indicator - sphere -->
+            <a-sphere
+                position="0 0.5 0"
+                radius="0.3"
+                material="color: yellow; opacity: 0.5;"
+                animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000;">
+            </a-sphere>
+        </a-marker>
+        
+        <!-- You can add more markers here -->
+        <!-- Example for Marker 1:
+        <a-marker type="barcode" value="1">
+            <a-box position="0 0.5 0" material="color: blue;"></a-box>
+            <a-text value="CONCRETE" position="0 1.2 0" align="center" color="white"></a-text>
+        </a-marker>
+        -->
+        
+        <a-entity camera></a-entity>
+    </a-scene>
 </section>
 
 <!-- home section ends -->
+ 
+ <script>
+    // Force use of rear camera on mobile
+    AFRAME.registerComponent('custom-camera', {
+        init: function() {
+            const video = document.querySelector('video');
+            if (video && navigator.mediaDevices) {
+                navigator.mediaDevices.getUserMedia({
+                    video: {
+                    facingMode: 'environment', // Use rear camera
+                    width: { ideal: 960 },
+                    height: { ideal: 1280 }
+                    }
+                }).then(function(stream) {
+                    video.srcObject = stream;
+                    video.play();
+                }).catch(function(err) {
+                    console.error('Camera error:', err);
+                });
+            }
+        }
+    });
+
+    // Hide loading screen when AR is ready
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.querySelector('.arjs-loader').style.display = 'none';
+        }, 2000);
+    });
+
+    // Get debug elements
+    const debugInfo = document.getElementById('debugInfo');
+    const markerStatus = document.getElementById('markerStatus');
+    const cameraInfo = document.getElementById('cameraInfo');
+    const detectionStatus = document.getElementById('detectionStatus');
+
+    // Wait for AR scene to be ready
+    const scene = document.querySelector('a-scene');
+
+    scene.addEventListener('loaded', function() {
+        console.log('AR Scene loaded successfully');
+        
+        // Get camera info
+        setTimeout(function() {
+            const video = document.querySelector('video');
+            if (video && video.srcObject) {
+                const track = video.srcObject.getVideoTracks()[0];
+                const settings = track.getSettings();
+                cameraInfo.innerHTML = `${settings.width}x${settings.height}`;
+                console.log('Camera settings:', settings);
+            }
+        }, 2000);
+    });
+
+    // Marker detection events
+    const marker0 = document.querySelector('#marker0');
+
+    if (marker0) {
+        // Marker found
+        marker0.addEventListener('markerFound', function() {
+            console.log('Marker 0 DETECTED!');
+            markerStatus.innerHTML = 'Marker: <span style="color: #00ff00;">DETECTED ✓</span>';
+            detectionStatus.innerHTML = 'Marker Detected!';
+            detectionStatus.classList.add('detected');
+            
+            // Optional: Play sound or haptic feedback
+            if (navigator.vibrate) {
+                navigator.vibrate(200); // Vibrate for 200ms
+            }
+        });
+        
+        // Marker lost
+        marker0.addEventListener('markerLost', function() {
+            console.log('Marker 0 LOST');
+            markerStatus.innerHTML = 'Marker: <span style="color: #ff0000;">Not detected</span>';
+            detectionStatus.innerHTML = 'Scanning for markers...';
+            detectionStatus.classList.remove('detected');
+        });
+    }
+
+    // Log any errors
+    window.addEventListener('error', function(e) {
+        console.error('Error:', e.message);
+    });
+
+    // Check if camera permission is granted
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            console.log('Camera permission granted');
+            stream.getTracks().forEach(track => track.stop()); // Stop the test stream
+        })
+        .catch(function(err) {
+            console.error('Camera permission denied:', err);
+            alert('Camera permission is required for AR. Please enable it in your browser settings.');
+        });
+</script>
 <script src="js/header.js"></script>
 </body>
 </html>
