@@ -101,12 +101,12 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  /* -webkit-box-align: center;
+  -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; */
+          justify-content: space-between;
 
   padding: 0 9%;
   border: 5px black;
@@ -141,6 +141,7 @@ body {
 }
 
 .header .navbar ul li:hover ul {
+  cursor: pointer;
   display: block;
 }
 
@@ -152,6 +153,7 @@ body {
 }
 
 .header .navbar ul li a:hover {
+  cursor: pointer;
   border-bottom-left-radius: 3rem;
   color:#00ff2f
 }
@@ -159,13 +161,19 @@ body {
 .header .navbar ul li ul {
   position: absolute;
   left: 0;
-  width: 20rem;
-  background: #0d5003;
+  background: #093b00;
   display: none;
+  padding: 0.5rem 0;
+  min-width: 10rem; 
 }
 
 .header .navbar ul li ul li {
   width: 100%;
+}
+
+.header .navbar ul li ul li a {
+  white-space: nowrap;   /* 👈 prevents wrapping */
+  padding: 1.2rem 2rem;
 }
 
 .link {
