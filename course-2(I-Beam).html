@@ -17,51 +17,42 @@
     
 <!-- header section starts  -->
 <div id="header-placeholder"></div>
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-
-    const menuBtn = document.getElementById('menu-btn');
-    const navbar = document.querySelector('.header .navbar');
-
-    if (menuBtn && navbar) {
-        menuBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    }
-});
-</script>
 <!-- header section ends -->
 
 <section class="heading">
-    <h3>Elements in Construction</h3>
+    <h3>The I beam</h3>
     <p>Explore our pages to find out more about the construction parts of ArborForm</p>
-</section>
-
-<section>
-    <a href="about.html"> About us </a> 
-    <span> / Elements </span>
-</section>
-
-<section class="course2content">
-    <div class="box">
-        <div class="image">
-            <img src="sopeyEducational/IMG_2105.png" alt="">
-        </div>
+    <div class="breadcrumb">
+        <a href="course-2.html"> Education </a> 
+        <span> / The I Beam </span>
     </div>
 </section>
 
+<!-- course-2 content stats -->
 
+<section class="course-2">
 
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        p>Lorem ipsum...</p>
+    </div>
 
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
 
-
-
-
-
-
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem ipsum...</p>
+    </div>
+    <script src="js/accordian.js"></script>
+    <!-- <div class="box">
+        <div class="image">
+            <img src="sopeyEducational/IMG_2105.png" alt="">
+        </div>
+    </div> -->
+</section>
 
 
 <!-- footer section starts  -->
@@ -81,6 +72,7 @@ fetch("header.html")
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script src="js/header.js"></script>
 
 </body>
 </html>
