@@ -448,47 +448,17 @@ body {
   gap: 3rem;
 }
 
-.course-2 .accordian {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.course-2 .active, .accordion:hover {
-  background-color: #ccc;
-}
-
-/* Style the accordion panel. Note: hidden by default */
-.course-2 .panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-}
-
 .course-2 .box {
-  background: #fff1a8;
+  background: #000000;
   padding: 2rem;
   border-radius: 1rem;
 }
 
-.course-2 .box .image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 1rem;
-}
-
 .course-2 .box:hover {
-  /* transform: translate(3px, -2px); */
+  background-color: #11ff00;
+  transform: translate(3px, -2px);
   border: #ffffff solid 0.1rem;
-  transition: border 0.2s ease;
+  transition: background-color border 0.2s ease;
 }
 
 .course-2 .box a {
@@ -519,6 +489,25 @@ body {
 
 .course-2 .box:hover p {
     color: #000000;
+}
+
+.I-Beam {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.I-Beam .box {
+  background: #000000;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.I-Beam .box .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;
 }
 
 .course-3 {
