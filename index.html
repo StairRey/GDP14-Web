@@ -22,38 +22,67 @@
 <!-- home section starts  -->
 
 <section class="home">
-
-    <!-- <div class="image">
-        <img src="images/c535e8b4-d8f4-47ab-92e6-f6dd6f44f7de.JPG" alt="">
-        <div class="overlay"></div>
-    </div> -->
-
     <div class="content">
-        <h3 id="typing-text" class="typing"></h3>
+        <h3 id="typing-text">
+            <span class="brand">Arbor</span><span class="brandB">Form</span>:
+            <span id="typed"></span>
+        </h3>
     </div>
-    
+
+    <!-- Script for typing text -->
     <script>
-        const text = "ArborForm: The world's first multi material Structural Sculpture";
-        const typingElement = document.getElementById("typing-text");
+        const text = " The world's first multi material Structural Sculpture";
+        const typingElement = document.getElementById("typed");
+
         let index = 0;
 
         function type() {
         if (index < text.length) {
             typingElement.textContent += text[index];
             index++;
-            setTimeout(type, 100); // typing speed in ms
+            setTimeout(type, 80);
         }
         }
 
         type();
     </script>
+</section>
 
+<section class="read-more">
+
+  <h2>Read More</h2>
+
+  <p>
+    ArborForm explores the intersection of structural engineering,
+    digital fabrication, and sculptural design. By combining multiple
+    materials into a unified system, it demonstrates how structural
+    elements can become expressive architectural forms.
+  </p>
+
+  <p>
+    This project investigates new fabrication techniques and the
+    potential for hybrid construction methods that merge aesthetics
+    with structural performance.
+  </p>
+
+</section>
+
+<section class="next-section">
+
+  <h2>The Project</h2>
+
+  <p>
+    ArborForm is designed as a multi-material structural sculpture,
+    integrating engineered components with organic geometries.
+    The project aims to challenge conventional perceptions of
+    structural systems by treating them as both functional and
+    artistic elements.
+  </p>
 
 </section>
 
 <!-- home section ends -->
 
 <script src="js/header.js"></script>
-
 </body>
 </html>

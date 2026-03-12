@@ -20,9 +20,33 @@
 <!-- header section ends -->
 
 <section class="heading">
-    <h3>About us</h3>
-    <p>Explore our pages to find out more about our product, 
-        we are excited to share our design process with you</p>
+    <h3>
+        <span class="brand">About</span>
+        <span class="brandB">Us</span>
+    </h3>
+    <p>
+        <span id="typed"></span>
+    <p>
+    
+
+    <!-- Script for typing text -->
+    <script>
+        const text = " Explore our pages to find out more about our product, we are excited to share our design process with you";
+        const typingElement = document.getElementById("typed");
+
+        let index = 0;
+
+        function type() {
+        if (index < text.length) {
+            typingElement.textContent += text[index];
+            index++;
+            setTimeout(type, 20);
+        }
+        }
+
+        type();
+    </script>
+
     <div class="breadcrumb">
         <a href="index.html"> home </a> 
         <span> / about us </span>
@@ -53,23 +77,21 @@
 
     <div class="content">
 
-        <h3>Our Product</h3>
+        <h3>
+            <span class="brand">Our</span>
+            <span class="brandB">Product</span>
+        </h3>
         
         <p> 
-            ArborForm is the harmony between nature and 
+            <span class="brand">Arbor</span><span class="brandB">Form</span> 
+            at its core is an educational piece, bridging the gap between nature and 
             construction, a visionary project that redefines
             the way we interact with our built environment.
         </p>
-        <p> 
-            At its core, ArborForm is a living architectural marvel,
-            seamlessly integrating lush greenery with innovative design.
-            This project is a testament to our commitment to sustainability,
-            as it not only enhances the aesthetic appeal of urban spaces but 
-            also promotes environmental well-being.
-        </p>
 
         <p> 
-            At its core, ArborForm is a living architectural marvel,
+            At its core, <span class="brand">Arbor</span><span class="brandB">Form</span>
+            is a living architectural marvel,
             seamlessly integrating lush greenery with innovative design.
             This project is a testament to our commitment to sustainability,
             as it not only enhances the aesthetic appeal of urban spaces but 
@@ -87,6 +109,10 @@
 </section>
 
 <section class="about">
+
+    <div class="image">
+        <img src="images/shroom.png" alt="">
+    </div>
 
     <div class="content">
         <h3>CAD model</h3>
@@ -110,10 +136,6 @@
 
         <h2>AR, 14.01.2026</h2>
         <p>UoS, all rights reserved</p>
-    </div>
-
-    <div class="image">
-        <img src="images/shroom.png" alt="">
     </div>
 </section>
 
