@@ -21,8 +21,7 @@
 
 <section class="heading">
     <h3>
-        <span class="brand">About</span>
-        <span class="brandB">Us</span>
+        <span class="brand">About</span> <span class="brandB">Us</span>
     </h3>
     <p>
         <span id="typed"></span>
@@ -31,7 +30,7 @@
 
     <!-- Script for typing text -->
     <script>
-        const text = " Explore our pages to find out more about our product, we are excited to share our design process with you";
+        const text = "Explore our pages to find out more about our product, we are excited to share our design process with you";
         const typingElement = document.getElementById("typed");
 
         let index = 0;
@@ -109,13 +108,11 @@
 </section>
 
 <section class="about">
-
-    <div class="image">
-        <img src="images/shroom.png" alt="">
-    </div>
-
     <div class="content">
-        <h3>CAD model</h3>
+        <h3>
+            <span class="brand">CAD</span>
+            <span class="brandB">Model</span>
+        </h3>
         
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -151,57 +148,84 @@
 </section>
 
 
-<section class="category">
+<section class="category apple-cards">
+    <input type="radio" name="card" id="card0" checked>
 
-    <a href="meet-the-team.html" class="box">
-        <img src="https://www.clipartmax.com/png/small/2-21526_clipart-citizen-engagement-engagement-png.png" alt="Clipart Citizen Engagement - Engagement Png @clipartmax.com">
-        <h3>public engagement </h3>
-    </a>
+    <input type="radio" name="card" id="card1">
+    <input type="radio" name="card" id="card2">
+    <input type="radio" name="card" id="card3">
+    <input type="radio" name="card" id="card4">
+    <input type="radio" name="card" id="card5">
 
-    <a href="#" class="box">
-        <img src="https://www.clipartmax.com/png/small/87-879443_png-file-light-bulb-icon-vector.png" alt="Png File - Light Bulb Icon Vector @clipartmax.com">
-        <h3>Outreach</h3>
-    </a>
+    <label for="card0" class="card-overlay"></label>
 
-    <a href="#" class="box">
-        <img src="https://www.clipartmax.com/png/small/155-1559319_learn-open-book-icon-vector.png" alt="Learn - Open Book Icon Vector @clipartmax.com">
-        <h3>Education</h3>
-    </a>
+    <div class="cards">
 
-    <a href="#" class="box">
-        <img src="https://www.clipartmax.com/png/small/140-1409181_dollars-money-bag-on-a-hand-vector-give-money-icon.png" alt="Dollars Money Bag On A Hand Vector - Give Money Icon @clipartmax.com">
-        <h3>Maximum Return</h3>
-    </a>
+        <label for="card1" class="card">
+            <img src="images/c535e8b4-d8f4-47ab-92e6-f6dd6f44f7de.JPG">
+            <div class="card-content">
+                <h3>Public Engagement</h3>
+                <p>We believe engagement with the public and students is the best way to share ideas.</p>
+            </div>
+        </label>
 
+        <label for="card2" class="card">
+            <img src="images/IMG_6159.jpeg">
+            <div class="card-content">
+                <h3>Outreach</h3>
+                <p>
+                    Connecting engineering with the wider community.
+                </p>
+            </div>
+        </label>
 
+        <label for="card3" class="card">
+            <img src="images/IMG_6182.jpeg">
+            <div class="card-content">
+                <h3>Education</h3>
+                <p>Bringing knowledge into an interactive experience.</p>
+            </div>
+        </label>
+
+        <label for="card4" class="card">
+            <img src="images/IMG_6154.jpeg">
+            <div class="card-content">
+                <h3>Maximum Return</h3>
+                <p>Designing efficient and sustainable structures.</p>
+            </div>
+        </label>
+
+        <label for="card5" class="card">
+            <img src="images/IMG_6168.jpeg">
+            <div class="card-content">
+                <h3>Maximum Return</h3>
+                <p>Designing efficient and sustainable structures.</p>
+            </div>
+        </label>
+
+    </div>
 </section>
-
 <!-- categories section ends -->
 
 <!-- categories section starts  -->
-<section class="about">
 
-    <div class="content">
+<div class="aboutwrapper">
+    <div>
         <h3>Our Sponsors</h3>
     </div>
-</section>
-
-
-<section class="category">
-
-    <a href="meet-the-team.html" class="box">
-        <img src="images/UoSLogo.png" alt="">
-        <h3>Insert Sponsor </h3>
-    </a>
-
-    <a href="#" class="box">
-        <img src="images/IdeaStatica.png" alt="">
-        <h3>Idea Statica</h3>
-    </a>
-
-
-</section>
-
+    
+    <div class="scrolls">
+            <a href="https://www.southampton.ac.uk/">
+                <img src="images/UoSLogo.png" alt="">
+            </a>
+            <a href="https://www.ideastatica.com/">
+                <img src="images/IdeaStatica.png" alt="">
+            </a>
+            <a href="https://www.saseng.co.uk/">
+                <img src="images/Stephens & Stuarts Enginering.avif" alt="">
+            </a>
+    </div>
+</div>
 <!-- categories section ends -->
 
 

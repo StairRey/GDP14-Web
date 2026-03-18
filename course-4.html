@@ -20,8 +20,31 @@
 <!-- header section ends -->
 
 <section class="heading">
-    <h3>ArborForm Quiz</h3>
-    <p>Take part in our quiz to learn something new</p>
+    <h3>
+        <span class="brand">Arbor</span><span class="brandB">Form</span>
+        <span class="brand">Quiz</span>
+    </h3>
+    <p>
+        <span id="typed"></span>
+    <p>
+    <!-- Script for typing text -->
+    <script>
+        const text = "Take part in our quiz to learn something new with more releases coming soon.\
+        Our quiz is designed to have no prior knowledge for connection design to be completed";
+        const typingElement = document.getElementById("typed");
+
+        let index = 0;
+
+        function type() {
+        if (index < text.length) {
+            typingElement.textContent += text[index];
+            index++;
+            setTimeout(type, 20);
+        }
+        }
+
+        type();
+    </script>
     <div class="breadcrumb">
         <a href="Apps.html"> Apps </a> 
         <span> / Quiz </span>

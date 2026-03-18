@@ -20,20 +20,42 @@
 <!-- header section ends -->
  
 <section class="heading">
-    <h3>contact us</h3>
-    <p> Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit. 
-        In sapien arcu, tempus in nulla
-         quis, maximus tincidunt orci.
-          Pellentesque laoreet lectus non 
-          orci lacinia, vel elementum purus 
-          placerat. 
-    </p>
+    <h3>
+        <span class="brand">Contact</span> 
+        <span class="brandB">Us</span>
+    </h3>
+
+    <p>
+        <span id="typed"></span>
+    <p>
+    
+
+    <!-- Script for typing text -->
+    <script>
+        const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+        In sapien arcu, tempus in nulla quis, maximus tincidunt orci.\
+        Pellentesque laoreet lectus non orci lacinia, vel elementum purus placerat. ";
+        const typingElement = document.getElementById("typed");
+
+        let index = 0;
+
+        function type() {
+        if (index < text.length) {
+            typingElement.textContent += text[index];
+            index++;
+            setTimeout(type, 20);
+        }
+        }
+
+        type();
+    </script>
+
+    <section class="beadcrumb">
+        <a href="home.html"> home </a> <span> / Contact </span>
+    </section>
+    
 </section>
 
-<section>
-    <a href="home.html"> home </a> <span> / Contact </span>
-</section>
 
 <section class="contact">
     <div class="icons-container">

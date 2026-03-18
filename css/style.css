@@ -29,8 +29,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/shroom.png") no-repeat center center;
-  background-size: cover;
+  background: rgb(16, 16, 16);
   z-index: -1;
   transform: scale(1.05); /* subtle depth effect */
 }
@@ -275,16 +274,18 @@ body {
   transition: color 0.3s ease;
 }
 
+.brand:hover {
+  color: #00ff2f;
+  text-shadow: 2px 2px 1px #c27c0399;
+}
+
 .brandB {
   transition: color 0.3s ease;
 }
 
-.brand:hover {
-  color: #00ff2f;
-}
-
 .brandB:hover {
   color: #c27c03;
+  text-shadow: 2px 2px 1px #00ff2f99;
 }
 
 .read-more,
@@ -308,29 +309,189 @@ body {
   max-width: 100%;
 }
 
-.category {
-  display: -ms-grid;
-  display: inline-flex;
-  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.5rem;
+.aboutwrapper { 
+        background: ;
+        margin: auto; 
+        text-align: center; 
+        position: relative;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-top: 20px !important;
+        margin-bottom: 50px !important;
+        width: 100%;
+    }
+
+    .aboutwrapper h3 {
+      font-size: 5rem;
+      padding: 5rem;
+
+    }
+    .scrolls { 
+        padding-left: 20%;
+        padding-right: 20%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space:nowrap;
+    } 
+    .scrolls a img {  
+        margin: 0 30px;
+        max-height: 100px;
+        cursor: grab;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    }
+    .scrolls a img p {  
+        font-size: small;
+    }
+
+
+.apple-cards {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-.category .box {
-  border-radius: 0.5rem;
-  background: #03ac0639;
-  padding: 4rem 3rem;
-  text-align: center;
+/* hide radio buttons */
+.apple-cards input {
+    display: none;
 }
 
-.category .box img {
-  height: 7rem;
-  margin-bottom: 2rem;
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: auto;
+  cursor: default;
 }
 
-.category .box h3 {
-  font-size: 1.7rem;
-  color: #ffffff;
+/* when ANY card is selected → disable overlay over cards */
+#card1:checked ~ .card-overlay,
+#card2:checked ~ .card-overlay,
+#card3:checked ~ .card-overlay,
+#card4:checked ~ .card-overlay,
+#card5:checked ~ .card-overlay {
+    pointer-events: none;
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    height: 350px;
+    z-index: 2;
+}
+
+/* base card */
+.card {
+    position: relative;
+    backdrop-filter: blur(10px);
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(.28,-0.03,0,.99);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* image fills */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* dark overlay */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* content hidden by default */
+.card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.1s;
+}
+
+.card-content h3 {
+    font-size: 2rem;
+}
+
+.card-content p {
+    font-size: 1.3rem;
+}
+
+/* RESET STATE (click outside) */
+#card0:checked ~ .cards .card {
+    flex: 1;
+}
+
+#card0:checked ~ .cards .card-content {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* EXPAND SELECTED */
+#card1:checked ~ .cards label[for="card1"],
+#card2:checked ~ .cards label[for="card2"],
+#card3:checked ~ .cards label[for="card3"],
+#card4:checked ~ .cards label[for="card4"],
+#card5:checked ~ .cards label[for="card5"] {
+    flex: 6;
+}
+
+/* SHRINK OTHERS */
+#card1:checked ~ .cards label:not([for="card1"]),
+#card2:checked ~ .cards label:not([for="card2"]),
+#card3:checked ~ .cards label:not([for="card3"]),
+#card4:checked ~ .cards label:not([for="card4"]),
+#card5:checked ~ .cards label:not([for="card5"]) {
+    flex: 1;
+}
+
+/* SHOW CONTENT */
+#card1:checked ~ .cards label[for="card1"] .card-content,
+#card2:checked ~ .cards label[for="card2"] .card-content,
+#card3:checked ~ .cards label[for="card3"] .card-content,
+#card4:checked ~ .cards label[for="card4"] .card-content,
+#card5:checked ~ .cards label[for="card5"] .card-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box {
+    min-width: 250px;
+    flex: 0 0 auto;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    scroll-snap-align: start;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .imagefull {
@@ -386,6 +547,12 @@ body {
           flex: 1 1 30rem;
 }
 
+.about .TOPcontent {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30rem;
+          flex: 1 1 30rem;
+}
+
 .about .content h2 {
   color: #ffffff;
   font-weight: bold;
@@ -412,7 +579,6 @@ body {
 .course-1 .box {
   border-radius: 4rem;
   text-align: left;
-  padding: 2rem;
   gap: 1.5rem;
 }
 
@@ -734,6 +900,7 @@ body {
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 4rem;
+  
 }
 
 .members .box {
@@ -844,6 +1011,135 @@ body {
 .members .box .content span {
   color: #ebe7e7;
   font-size: 1.5rem;
+}
+
+/* Image zoom effect on hover */
+.members .box .image:hover .team-member-img {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+.team-member-img {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* ====== MODAL STYLES ====== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 5001;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 5002;
+}
+
+.modal-close:hover {
+  color: #00ff26c9;
+}
+
+.modal-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgb(203, 14, 14);
+  border: 2px solid #0f9327;
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: #000;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.modal-info h2 {
+  font-size: 2.5rem;
+  color: #00ff2f;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.modal-position {
+  font-size: 1.5rem;
+  color: #b5b1c3;
+  margin-bottom: 1.5rem !important;
+  font-weight: 600;
+}
+
+.modal-description {
+  font-size: 1.3rem;
+  color: #d0d0d0;
+  line-height: 1.8;
+  margin-bottom: 2rem !important;
+}
+
+.modal-socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 5rem;
+  transition: all 0.3s ease;
+}
+
+.modal-socials a:hover {
+  transform: scale(1.1);
 }
 
 .blog {
@@ -1222,6 +1518,13 @@ body {
     opacity: 1;
   }
 
+  .header .navbar,
+  .header .navbar ul,
+  .header .navbar ul li,
+  .header .navbar ul li a {
+    transition: none !important;
+  }
+
   .quiz-container {
   width: 95%;
   height: 85vh;
@@ -1249,6 +1552,35 @@ body {
         scroll-snap-align: start;
         flex-shrink: 0;
         border-radius: 3rem;
+    }
+
+    .modal-close {
+      top: -50px;
+      font-size: 2.5rem;
+    }
+
+    .modal-card {
+      border-radius: 1rem;
+    }
+
+    .modal-image {
+      height: 250px;
+    }
+
+    .modal-info {
+      padding: 2rem 1.5rem;
+    }
+
+    .modal-info h2 {
+      font-size: 2rem;
+    }
+
+    .modal-position {
+      font-size: 1.2rem;
+    }
+
+    .modal-description {
+      font-size: 1.1rem;
     }
 }
 

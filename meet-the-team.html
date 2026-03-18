@@ -28,8 +28,29 @@
             <span class="brand">Our</span>
             <span class="brandB">Team</span>
         </h3>
-        <p>We are a team of passionate engineers and designers working to make a sustainable future through innovative
-            construction solutions.</p>
+        <p>
+            <span id="typed"></span>
+        <p>
+        
+
+        <!-- Script for typing text -->
+        <script>
+            const text = "We are a team of passionate engineers and designers\
+            working to make a sustainable future through innovative construction solutions.";
+            const typingElement = document.getElementById("typed");
+
+            let index = 0;
+
+            function type() {
+            if (index < text.length) {
+                typingElement.textContent += text[index];
+                index++;
+                setTimeout(type, 20);
+            }
+            }
+
+            type();
+        </script>
 
         <div class="breadcrumb">
             <a href="index.html"> home </a> 
@@ -38,39 +59,39 @@
     </section>
 
     <!-- Supervisor section starts  -->
-
     <section class="members">
-
         <h2 class="team-title"> Supervisors </h2>
-
         <div class="box">
             <div class="image">
-                <img src="images/AEface.webp" alt="">
-                <div class="share">
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="https://www.linkedin.com/in/ahmed-elkady-00220377/" class="fab fa-linkedin"></a>
-                </div>
+                <img src="images/AEface.webp" alt="Ahmed Elkady" class="team-member-img" 
+                        data-name="Ahmed Elkady" 
+                        data-position="MEng CEng PhD, Supervisor" 
+                        data-description="Leading the project with expertise in engineering and construction solutions." 
+                        data-instagram="#" 
+                        data-linkedin="https://www.linkedin.com/in/ahmed-elkady-00220377/" target="_blank">
             </div>
+    
             <div class="content">
                 <h3>Ahmed Elkady</h3>
                 <span>MEng CEng PhD, Supervisor</span>
             </div>
         </div>
-
+ 
         <div class="box">
             <div class="image">
-                <img src="images/LBface.webp" alt="">
-                <div class="share">
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="https://www.linkedin.com/in/lyndonbuck/?originalSubdomain=uk" class="fab fa-linkedin"></a>
-                </div>
+                <img src="images/LBface.webp" alt="Lyndon Buck" class="team-member-img" 
+                        data-name="Lyndon Buck" 
+                        data-position="BEng MA PhD, co-Supervisor" 
+                        data-description="Co-leading the aesthetic Design for the sculpture" 
+                        data-instagram="#" 
+                        data-linkedin="https://www.linkedin.com/in/lyndonbuck/"  target="_blank">
             </div>
             <div class="content">
                 <h3>Lyndon Buck</h3>
                 <span>BSc ME PhD co-Supervisor</span>
             </div>
         </div>
-
+ 
     </section>
 
     <!-- supervisors section ends -->
@@ -78,19 +99,15 @@
     <!-- Team section starts  -->
 
     <section class="members">
-
         <h2 class="team-title"> Team Members </h2>
-
         <div class="box">
             <div class="image">
-                <img src="images/WOface.png" alt="">
-                <div class="share">
-                    <!-- <p>I'm in charge of conneection design and Structural Analysis</p> -->
-                    <div class="icons">
-                        <a href="#" class="fab fa-instagram"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
-                    </div>
-                </div>
+            <img src="images/WOface.png" alt="Will Oswell" class="team-member-img" 
+                        data-name="Will Oswell" 
+                        data-position="MEng, Civil Engineering" 
+                        data-description="Leading the conneection design and Structural Analysis" 
+                        data-instagram="#" 
+                        data-linkedin="https://www.linkedin.com/in/will-oswell-96486925a/" target="_blank">
             </div>
             <div class="content">
                 <h3>William Oswell</h3>
@@ -100,15 +117,12 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/MVPface.jpeg" alt="">
-                <div class="share">
-                    <!-- <p>Hey guys, I'm in charge of PR and Sponsorship for this project!!</p> -->
-                    
-                    <div class="icons">
-                        <a href="#" class="fab fa-instagram"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
-                    </div>
-                </div>
+            <img src="images/MVPface.jpeg" alt="Megan Vega Pazmino" class="team-member-img" 
+                    data-name="Megan Vega Pazmino" 
+                    data-position="MEng, Mechanical Engineering" 
+                    data-description="leading the PR and Sponsorship for this project"
+                    data-instagram="#" 
+                    data-linkedin="https://www.linkedin.com/in/meganvegapazmino/" target="_blank">
             </div>
             <div class="content">
                 <h3>Megan Vega Pazmino</h3>
@@ -118,15 +132,12 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/SDface.png" alt="">
-                <div class="share">
-                    <!-- <p>I'm in charge of Seating Design and Public outreach</p> -->
-                    
-                    <div class="icons">
-                        <a href="#" class="fab fa-instagram"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
-                    </div>
-                </div>
+                <img src="images/SDface.png" alt="Sophie Le Duc" class="team-member-img" 
+                    data-name="Sophie Le Duc" 
+                    data-position="MEng, Acoustical Engineering" 
+                    data-description="Seating Design, educational content and Public outreach"
+                    data-instagram="#" 
+                    data-linkedin="https://www.linkedin.com/in/sophie-le-duc-292137397/" target="_blank">
             </div>
             <div class="content">
                 <h3>Sophie Le Duc</h3>
@@ -136,15 +147,12 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/YWface.png" alt="">
-                <div class="share">
-                    <!-- <p>I'm in charge of Costings, structural analysis</p> -->
-                    
-                    <div class="icons">
-                        <a href="#" class="fab fa-instagram"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
-                    </div>
-                </div>
+                <img src="images/YWface.png" alt="Ya Wen Lee" class="team-member-img" 
+                    data-name="Ya Wen Lee" 
+                    data-position="MEng, Mechanical Engineering" 
+                    data-description="Costings, project management and structural analysis"
+                    data-instagram="#" 
+                    data-linkedin="https://www.linkedin.com/in/lee-ya-wen-176492226/" target="_blank">
             </div>
             <div class="content">
                 <h3>Ya Wen Lee</h3>
@@ -154,14 +162,12 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/ARface.png" alt="">
-                <div class="share">
-                    <!-- <p>I'm in charge of the CAD design and structural design</p> -->
-                    <div class="icons">
-                        <a href="#" class="fab fa-instagram"></a>
-                      <a href="#" class="fab fa-linkedin"></a>
-                    </div>
-                </div>
+                <img src="images/ARface.png" alt="Alastair Rey" class="team-member-img" 
+                    data-name="Alastair Rey" 
+                    data-position="MEng, Civil Engineering" 
+                    data-description="Leading the overall 3D design and BIM Management"
+                    data-instagram="#" 
+                    data-linkedin="https://www.linkedin.com/in/alastairrey-civileng/" target="_blank">
             </div>
             <div class="content">
                 <h3>Alastair Rey</h3>
@@ -177,7 +183,28 @@
 
     <!-- Members section ends -->
 
-
+    <!-- Modal for team member details -->
+    <div id="memberModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-card">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalName"></h2>
+                    <p class="modal-position" id="modalPosition"></p>
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-socials">
+                        <a id="modalInstagram" href="#" class="fab fa-instagram" target="_blank"></a>
+                        <a id="modalLinkedin" href="#" class="fab fa-linkedin" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for team member details -->
 
     <!-- footer section starts  -->
 
@@ -196,6 +223,52 @@
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
     <script src="js/header.js"></script>
+
+    <script>
+        // Team member modal functionality
+        const modal = document.getElementById('memberModal');
+        const closeBtn = document.querySelector('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const teamImages = document.querySelectorAll('.team-member-img');
+
+        // Open modal when clicking on a team member image
+        teamImages.forEach(img => {
+            img.addEventListener('click', function() {
+                const name = this.dataset.name;
+                const position = this.dataset.position;
+                const description = this.dataset.description;
+                const instagram = this.dataset.instagram;
+                const linkedin = this.dataset.linkedin;
+                const imageSrc = this.src;
+
+                document.getElementById('modalImage').src = imageSrc;
+                document.getElementById('modalName').textContent = name;
+                document.getElementById('modalPosition').textContent = position;
+                document.getElementById('modalDescription').textContent = description;
+                document.getElementById('modalInstagram').href = instagram;
+                document.getElementById('modalLinkedin').href = linkedin;
+
+                modal.classList.add('active');
+            });
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+
+        modalOverlay.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+    </script>     
 </body>
+
 
 </html>

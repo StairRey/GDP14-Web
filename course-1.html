@@ -23,7 +23,28 @@
         <span class="brand">Design</span>
         <span class="brandB">Process</span>
     </h3>
-    <p>Explore our pages to find out more about our product, we are excited to share our design process with you</p>
+    <p>
+        <span id="typed"></span>
+    <p>
+    
+
+    <!-- Script for typing text -->
+    <script>
+        const text = "Explore our pages to find out more about our product, we are excited to share our design process with you";
+        const typingElement = document.getElementById("typed");
+
+        let index = 0;
+
+        function type() {
+        if (index < text.length) {
+            typingElement.textContent += text[index];
+            index++;
+            setTimeout(type, 20);
+        }
+        }
+
+        type();
+    </script>
     <div class="breadcrumb">
         <a href="about.html"> About us </a> 
         <span> / The Design process </span>
@@ -35,7 +56,7 @@
 
 <section class="course-1">
     <h1>
-            insert and change No. 1
+        Insert Title
     </h1>
     <div class="bigbox">
         <div class="box">
@@ -68,33 +89,33 @@
     </div>
 
     <h1>
-        insert and change No. 2
+        Insert Title
     </h1>
     <div class="bigbox">
         <div class="box">
             <img src="images/Image_holder_1.png" alt="">
-            <h3>Initial Ideas</h3>
+            <h3>Insert Title</h3>
             <p>Our brainstorming for this project...</p>
             <!-- <a href="#" class="btn">read more</a> -->
         </div>
 
         <div class="box">
             <img src="images/Image_holder_1.png" alt="">
-            <h3>the Antler and Tree</h3>
+            <h3>Insert Title</h3>
             <p>From our brainstorm there was...</p>
             <!-- <a href="#" class="btn">read more</a> -->
         </div>
 
         <div class="box">
             <img src="images/Image_holder_1.png" alt="">
-            <h3>Public Engagement</h3>
+            <h3>Insert Title</h3>
             <p>Introducing the public to our product...</p>
             <!-- <a href="#" class="btn">read more</a> -->
         </div>
 
         <div class="box">
             <img src="images/Image_holder_1.png" alt="">
-            <h3>Elements of design</h3>
+            <h3>Insert Title</h3>
             <p>Civil, Mechanical, Structural, Acoustics...</p>
             <!-- <a href="#" class="btn">read more</a> -->
         </div>
