@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ArborReality</title>
-
-    <!-- font awesome cdn link  to apply the mini logos lol -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebXR Test - Simple Version</title>
+    
+    <!-- ONLY A-Frame needed - WebXR is built into it! -->
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-
-
+    
     <style>
         body {
             margin: 0;
@@ -108,12 +101,8 @@
         }
     </style>
 </head>
-    
-<!-- header section starts  -->
-<div id="header-placeholder"></div>
-<!-- header section ends -->
-
 <body>
+    
     <!-- Start AR Button -->
     <button class="start-button" id="startButton">
         📱 Start AR
@@ -240,6 +229,5 @@
         console.log('📱 WebXR Test Ready');
         console.log('👉 Click "Start AR" to begin');
     </script>
-    <script src="js/header.js"></script>
 </body>
 </html>
