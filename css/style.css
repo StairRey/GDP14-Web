@@ -216,7 +216,7 @@ body {
   display: none;      
   font-size: 2rem;
   cursor: pointer;
-  color: #fff;             /* make it visible */
+  color: #ff0000;             /* make it visible */
   position: fixed;         /* position it above everything */
   z-index: 2000;           /* above overlay and navbar */
 }
@@ -244,19 +244,22 @@ body {
 }
 
 .home .content h3 {
-  font-size: 5rem; /* keep your size */
+  font-size: 5rem; 
   margin-bottom: 1rem;
   line-height: 1.2;
   word-break: break-word;
 }
 
 .home .content p {
-  font-size: 1.4rem; /* keep your size */
+  font-size: 1.4rem; 
   padding: 0.5rem 0;
   line-height: 2.5;
-  color: #f0f0f0; /* lighter on image */
+  color: #c80000; 
 }
 
+#container3D {
+  position: fixed;
+}
 
 #typing-text {
   color: #fff;
@@ -291,17 +294,27 @@ body {
   transform: scale(1.02);
 }
 
-.read-more,
-.next-section {
-  min-height: 100vh;
-  padding: 8rem 9%;
-  background: #111;
+.maintxt {
+  height: 100vh;
   color: #fff;
+  scroll-snap-align: start;
 }
 
-.read-more h2,
-.next-section h2 {
-  background-color: #6364634f;
+/* Right aligned section */
+#model3D,
+#About {
+  text-align: right;
+}
+
+/* Left aligned section */
+#TheProject {
+  text-align: left;
+}
+
+/* Headings */
+.maintxt h2 {
+  background-color: #7676764f;
+
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 3rem;
@@ -309,11 +322,29 @@ body {
   margin-bottom: 2rem;
 }
 
-.read-more p,
-.next-section p {
+/* Paragraphs */
+.maintxt p {
   font-size: 1.8rem;
   line-height: 1.6;
-  max-width: 100%;
+}
+
+/* Width + alignment differences */
+#model3D p,
+#About p {
+  max-width: 60%;
+  margin-left: auto;
+}
+
+#TheProject p {
+  max-width: 70%;
+}
+
+#container3D {
+  position: fixed;
+  inset: 0;
+  /* background-color: red; */
+  pointer-events: none; /* allows clicks to pass through */
+  z-index: -1; 
 }
 
 .aboutwrapper { 
@@ -523,7 +554,6 @@ body {
 }
 
 .about {
-  background-color: rgb(22, 22, 22);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -576,18 +606,17 @@ body {
   border-radius: 3rem;
   grid-column: 1 / -1;
   text-align: left;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   color: #ffffff;
   box-shadow: 5px -5px 0px rgb(8, 114, 48);
 }
 
 .about .content p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 0;
   color: #ffffff;
-  line-height: 1.5;
+  line-height: 1.7;
 }
-
 .course-1 {
   background-color: #1a1919;
 }
@@ -1367,14 +1396,6 @@ body {
   padding-top: 2.5rem;
   color: #ffffff;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
-}
-
-.foot .credit p {
-  font-size: 0.5rem;
-}
-
-.foot .credit a {
-  font-size: 1rem;
 }
 
 .footer .credit span {

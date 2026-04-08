@@ -17,79 +17,116 @@
 
 </head>
 
-    
-<!-- header section starts  -->
-<div id="header-placeholder"></div>
-<!-- header section ends -->
+<body>
+  <!-- header section starts  -->
+  <div id="header-placeholder"></div>
+  <!-- header section ends -->
 
-<!-- home section starts  -->
+  <!-- home section starts  -->
+  <section class="home">
+      <div class="content">
+          <h3 id="typing-text">
+              <span class="brand">Arbor</span><span class="brandB">Form</span>:
+              <span id="typed"></span>
+          </h3>
+      </div>
+  </section>
 
-<section class="home">
-    <div class="content">
-        <h3 id="typing-text">
-            <span class="brand">Arbor</span><span class="brandB">Form</span>:
-            <span id="typed"></span>
-        </h3>
+  <section>
+
+    <div class="maintxt" id="MTSpace1">
     </div>
 
-    <!-- Script for typing text -->
-    <script>
-        const text = " The world's first multi material Structural Sculpture";
-        const typingElement = document.getElementById("typed");
+    <div class="maintxt" id="model3D">
+      <h2>
+        <span class="brand">3D</span> <span class="brandB">model</span>
+      </h2>
+      <p>
+        ArborForm explores the intersection of structural engineering,
+        digital fabrication, and sculptural design. By combining multiple
+        materials into a unified system, it demonstrates how structural
+        elements can become expressive architectural forms.
+      </p>
 
-        let index = 0;
+      <p>
+        This project investigates new fabrication techniques and the
+        potential for hybrid construction methods that merge aesthetics
+        with structural performance.
+      </p>
+    </div>
 
-        function type() {
-        if (index < text.length) {
-            typingElement.textContent += text[index];
-            index++;
-            setTimeout(type, 80);
-        }
-        }
+    <div class="maintxt" id="TheProject">
+      <h2>
+        <span class="brand">The</span> <span class="brandB">Project</span>
+      </h2>
 
-        type();
-    </script>
-</section>
+      <p>
+        ArborForm is designed as a multi-material structural sculpture,
+        integrating engineered components with organic geometries.
+        The project aims to challenge conventional perceptions of
+        structural systems by treating them as both functional and
+        artistic elements.
+      </p>
+    </div> 
 
-<section class="read-more">
+    <div class="maintxt" id="About">
+      <h2>
+        <span class="brand">About</span> <span class="brandB">Us</span>
+      </h2>
+      <p>
+        ArborForm explores the intersection of structural engineering,
+        digital fabrication, and sculptural design. By combining multiple
+        materials into a unified system, it demonstrates how structural
+        elements can become expressive architectural forms.
+      </p>
 
-  <h2>
-    <span class="brand">Read</span> <span class="brandB">more</span>
-  </h2>
+      <p>
+        This project investigates new fabrication techniques and the
+        potential for hybrid construction methods that merge aesthetics
+        with structural performance.
+      </p>
+    </div>
 
-  <p>
-    ArborForm explores the intersection of structural engineering,
-    digital fabrication, and sculptural design. By combining multiple
-    materials into a unified system, it demonstrates how structural
-    elements can become expressive architectural forms.
-  </p>
+    <div class="maintxt" id="MTSpace2">
+    </div>
 
-  <p>
-    This project investigates new fabrication techniques and the
-    potential for hybrid construction methods that merge aesthetics
-    with structural performance.
-  </p>
+  </section>
 
-</section>
+  <!-- footer section starts  -->
 
-<section class="next-section">
+  <div id="footer-placeholder"></div>
+      <script>
+          fetch("footer.html")
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      </script>
 
-  <h2>
-    <span class="brand">The</span> <span class="brandB">Project</span>
-  </h2>
 
-  <p>
-    ArborForm is designed as a multi-material structural sculpture,
-    integrating engineered components with organic geometries.
-    The project aims to challenge conventional perceptions of
-    structural systems by treating them as both functional and
-    artistic elements.
-  </p>
-
-</section>
-
-<!-- home section ends -->
+  <!-- footer section ends -->
+</body>
 
 <script src="js/header.js"></script>
-</body>
+<div id="container3D"></div>
+<script type="module" src="js/animation.js"></script>
+<!-- Script for typing text -->
+<script>
+    const text = " The world's first multi material Structural Sculpture";
+    const typingElement = document.getElementById("typed");
+
+    let index = 0;
+
+    function type() {
+    if (index < text.length) {
+        typingElement.textContent += text[index];
+        index++;
+        setTimeout(type, 80);
+    }
+    }
+
+    type();
+</script>
+<!-- End of script for typing text -->
+
 </html>
