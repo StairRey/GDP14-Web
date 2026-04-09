@@ -216,7 +216,7 @@ body {
   display: none;      
   font-size: 2rem;
   cursor: pointer;
-  color: #ff0000;             /* make it visible */
+  color: #ffffff;             /* make it visible */
   position: fixed;         /* position it above everything */
   z-index: 2000;           /* above overlay and navbar */
 }
@@ -255,10 +255,6 @@ body {
   padding: 0.5rem 0;
   line-height: 2.5;
   color: #c80000; 
-}
-
-#container3D {
-  position: fixed;
 }
 
 #typing-text {
@@ -344,7 +340,8 @@ body {
   inset: 0;
   /* background-color: red; */
   pointer-events: none; /* allows clicks to pass through */
-  z-index: -1; 
+  /*under text content*/
+  z-index: -1;
 }
 
 .aboutwrapper { 
