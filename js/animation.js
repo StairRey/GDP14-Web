@@ -69,7 +69,7 @@ reRender3D();
 let arrPositionModel = [
     {
         id: 'MTSpace1', 
-        position: {x: 0.8, y: -1.0, z: 15.0},
+        position: {x: 1.2, y: -1.0, z: 15.0},
         rotation: {x: 0.6, y: -0.5, z: 0.0}
     },
 
